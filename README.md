@@ -1,26 +1,28 @@
 # ✈️ Flight Deal Tracker
 
-A Python project that tracks cheap flight deals and sends WhatsApp alerts when the price drops below a set threshold.
+A Python project that tracks cheap flight deals and sends **email alerts** when the price drops below a set threshold.
 
 ## 🚀 How It Works
 
 1. Fetches destination data from a Google Sheet (via Sheety API).
-2. Uses Amadeus API to search for flight deals from London.
-3. Compares current prices with your minimum price.
-4. Sends a WhatsApp message using Twilio if a cheaper deal is found.
+2. Uses the **Tequila Kiwi API** to search for flight deals from a set origin city.
+3. Compares current prices with your minimum price from the sheet.
+4. Sends an **email alert** using SMTP if a cheaper deal is found.
 
 ## 📁 Project Files
 
-- `main.py`: Main script to run the whole flow.
-- `data_manager.py`: Handles interaction with Sheety API (Google Sheets).
-- `flight_search.py`: Handles authentication and flight search via Amadeus API.
-- `flight_data.py`: Parses and finds the cheapest flight data.
-- `notification_manager.py`: Sends SMS or WhatsApp alerts using Twilio.
-- `.env`: Stores API keys and credentials (not shared publicly).
+- `main.py`: Orchestrates the complete workflow.
+- `data_manager.py`: Handles reading/writing destination and user data via the Sheety API.
+- `flight_search.py`: Communicates with the Tequila Kiwi API to find flight deals.
+- `flight_data.py`: Structures the flight data for easy access.
+- `notification_manager.py`: Sends email notifications to users.
+- `.env`: Stores API keys and credentials (never commit this file).
 
-## 🛠️ Setup
+## 🛠️ Setup Instructions
 
-1. Clone the repository.
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/PTharun007/flight-deal-tracker.git
+cd flight-deal-tracker
+
